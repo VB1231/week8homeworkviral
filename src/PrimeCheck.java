@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class PrimeCheck {
+    static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        PrimeCheck p = new PrimeCheck();
+        p.primeNum();
+        scan.close();
+    }
+
+    public void primeNum() {
+        int i, m = 0, flag = 0;
+        System.out.println("enter number to check");
+        int n = scan.nextInt();//it is the number to be checked
+        m = n / 2;
+        if (n == 0 || n == 1) {
+            System.out.println(n + " is not prime number");
+        } else {
+            for (i = 2; i <= m; i++) {
+                if (n % i == 0) {
+                    System.out.println(n + " is not prime number");
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                System.out.println(n + " is prime number");
+            }
+        }//end of else
+    }
+}
